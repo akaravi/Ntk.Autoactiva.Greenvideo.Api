@@ -19,10 +19,12 @@ namespace GermanyGreenVideo.Controllers
     public class UploadsController : ControllerBase
     {
         private readonly IWebHostEnvironment _environment;
+        private readonly Settings.Ffmpeg _fFmpeg;
 
-        public UploadsController(IWebHostEnvironment environment)
+        public UploadsController(IWebHostEnvironment environment, IOptions<Settings.Ffmpeg> options)
         {
             _environment = environment;
+            _fFmpeg = options.Value;
         }
 
         /// <summary>
@@ -142,9 +144,7 @@ namespace GermanyGreenVideo.Controllers
 
                         try
                         {
-                            string chormaKey = "ffmpeg -i" + fullPath +
-                                " -filter_complex '[1:v]colorkey=0x00FF00:0.3:0.2[ckout];[0:v][ckout]overlay[out]' -map '[out]' "
-                                + fullPathNew;
+                            string chormaKey = _fFmpeg.Command1 + fullPath + _fFmpeg.Command2 + fullPathNew;
 
                             string result = Assistant.Execute("C:\\ffmpeg\\bin\\ffmpeg.exe", chormaKey);
 

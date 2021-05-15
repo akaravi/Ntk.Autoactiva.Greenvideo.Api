@@ -48,6 +48,8 @@ namespace GermanyGreenVideo
                 c.IncludeXmlComments(xmlPath);
             });
 
+            services.Configure<Settings.Ffmpeg>(Configuration.GetSection("Ffmpeg"));
+
             services.AddScoped<UploadPartAttribute>();
             services.AddScoped<UploadCompeleteAttribute>();
 
