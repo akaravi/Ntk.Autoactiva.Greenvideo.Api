@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.808.8
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GermanyGreenVideo", "GermanyGreenVideo\GermanyGreenVideo.csproj", "{94D2A391-C3F0-42E5-9E05-EAF2540E1DBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GermanyGreenVideo", "GermanyGreenVideo\GermanyGreenVideo.csproj", "{94D2A391-C3F0-42E5-9E05-EAF2540E1DBD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{20F686D5-5C50-4CDC-88E1-6055A6515B24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ntk.Autoactiva.Greenvideo.BusinessInterface", "Ntk.Autoactiva.Greenvideo.BusinessInterface\Ntk.Autoactiva.Greenvideo.BusinessInterface.csproj", "{61DDDF2A-F7E3-40D5-8D90-B3889BC6E243}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ntk.Autoactiva.Greenvideo.Business", "Ntk.Autoactiva.Greenvideo.Business\Ntk.Autoactiva.Greenvideo.Business.csproj", "{A59D4454-7F21-482F-8431-7050D994DC1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ntk.Autoactiva.Greenvideo.Core", "Ntk.Autoactiva.Greenvideo.Core\Ntk.Autoactiva.Greenvideo.Core.csproj", "{47B6D713-4D05-4693-8312-E92C53C0FF85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ntk.Autoactiva.Greenvideo.BusinessPerformance", "Ntk.Autoactiva.Greenvideo.BusinessPerformance\Ntk.Autoactiva.Greenvideo.BusinessPerformance.csproj", "{8DA30F06-A24D-4BC6-8929-20BD4B6FFDF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +25,31 @@ Global
 		{94D2A391-C3F0-42E5-9E05-EAF2540E1DBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94D2A391-C3F0-42E5-9E05-EAF2540E1DBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94D2A391-C3F0-42E5-9E05-EAF2540E1DBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61DDDF2A-F7E3-40D5-8D90-B3889BC6E243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61DDDF2A-F7E3-40D5-8D90-B3889BC6E243}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61DDDF2A-F7E3-40D5-8D90-B3889BC6E243}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61DDDF2A-F7E3-40D5-8D90-B3889BC6E243}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A59D4454-7F21-482F-8431-7050D994DC1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A59D4454-7F21-482F-8431-7050D994DC1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A59D4454-7F21-482F-8431-7050D994DC1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A59D4454-7F21-482F-8431-7050D994DC1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47B6D713-4D05-4693-8312-E92C53C0FF85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47B6D713-4D05-4693-8312-E92C53C0FF85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47B6D713-4D05-4693-8312-E92C53C0FF85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47B6D713-4D05-4693-8312-E92C53C0FF85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DA30F06-A24D-4BC6-8929-20BD4B6FFDF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DA30F06-A24D-4BC6-8929-20BD4B6FFDF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DA30F06-A24D-4BC6-8929-20BD4B6FFDF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DA30F06-A24D-4BC6-8929-20BD4B6FFDF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{61DDDF2A-F7E3-40D5-8D90-B3889BC6E243} = {20F686D5-5C50-4CDC-88E1-6055A6515B24}
+		{A59D4454-7F21-482F-8431-7050D994DC1A} = {20F686D5-5C50-4CDC-88E1-6055A6515B24}
+		{47B6D713-4D05-4693-8312-E92C53C0FF85} = {20F686D5-5C50-4CDC-88E1-6055A6515B24}
+		{8DA30F06-A24D-4BC6-8929-20BD4B6FFDF0} = {20F686D5-5C50-4CDC-88E1-6055A6515B24}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6A075566-63B5-47F7-B93A-417D7B80B05D}
