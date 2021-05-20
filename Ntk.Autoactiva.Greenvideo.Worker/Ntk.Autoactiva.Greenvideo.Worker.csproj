@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>dotnet-Ntk.Autoactiva.Greenvideo.Worker-E0D8ADC1-A70E-4698-ADFB-C9BF5A3CB8A5</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="Experimental.System.Messaging" Version="1.1.0" />
+	  <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+	  <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="5.0.1" />
+	  <PackageReference Include="NLog.Web.AspNetCore" Version="4.11.0" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+	  <ProjectReference Include="..\Ntk.Autoactiva.Greenvideo.Business\Ntk.Autoactiva.Greenvideo.Business.csproj" />
+	  <ProjectReference Include="..\Ntk.Autoactiva.Greenvideo.Core\Ntk.Autoactiva.Greenvideo.Core.csproj" />
+  </ItemGroup>
+</Project>

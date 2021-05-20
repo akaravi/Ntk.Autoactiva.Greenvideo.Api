@@ -10,7 +10,7 @@
 
         }
         public FfmpegCModel Ffmpeg { get; set; }
-        public MicroServiceCloudFileCCModel MicroServiceCloudFile { get; set; }
+        public MicroServicCModel MicroServiceFile { get; set; }
         
         public SwaggerCModel Swagger { get; set; }
         public ElmahCModel Elmah { get; set; }
@@ -19,16 +19,16 @@
 
     public class FfmpegCModel
     {
+        public string FileName { get; set; } = "";
         public string BinPath { get; set; } = "";
         public string Command { get; set; } = "";
-       
     }
-    public class MicroServiceCloudFileCCModel
+    public class MicroServicCModel
     {
-        public string baseApiUrl { get; set; } = "https://apicms.ir/api/v1/";
-        public string CloudFileApiPath { get; set; } = "http://apifile.ir/api/v1/";
-
-        public string CloudFileKey { get; set; } = "li8e23e23eop2e33";
+        public bool Status { get; set; } = true;
+        public string ShareFolderInput { get; set; } 
+        public string ShareFolderInProcess { get; set; } 
+        public string ShareFolderOutput { get; set; } 
     }
     
     public class SwaggerCModel

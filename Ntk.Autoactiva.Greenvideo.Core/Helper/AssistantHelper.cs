@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
-using System.Text;
 using Ntk.Autoactiva.Greenvideo.BusinessPerformance.Performance;
 
 namespace Ntk.Autoactiva.Greenvideo.Core.Helper
@@ -62,6 +59,12 @@ namespace Ntk.Autoactiva.Greenvideo.Core.Helper
 
 
             return retOut;
+        }
+        public static string ChangeFileExtention(string Name, string ext)
+        {
+            if (Name.IndexOf(".") < 0)
+                return Name;
+            return Name.Substring(0, Name.IndexOf(".")) + "." + ext;
         }
         public string ExecuteCmd(string exePath, string WorkingDirectory, string command, int timeOutMin = 0)
         {

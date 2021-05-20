@@ -1,0 +1,7 @@
+﻿dotnet publish -c Release -o d:\MicroService\Ntk.Autoactiva.Greenvideo.Worker\
+sc create NtkCms.Autoactiva.Greenvideo BinPath=D:\MicroService\Ntk.Autoactiva.Greenvideo.Worker\Ntk.Autoactiva.Greenvideo.Worker.exe
+sc start NtkCms.Autoactiva.Greenvideo
+sc create NtkCms.Autoactiva.Greenvideo BinPath=D:\MicroService\Ntk.Autoactiva.Greenvideo.Worker\Ntk.Autoactiva.Greenvideo.Worker.exe
+sc start NtkCms.Autoactiva.Greenvideo
+sc stop NtkCms.Autoactiva.Greenvideo
+sc delete NtkCms.Autoactiva.Greenvideo

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Ntk.Autoactiva.Greenvideo.BusinessPerformance
+﻿namespace Ntk.Autoactiva.Greenvideo.BusinessPerformance
 {
     public class Class1
     {

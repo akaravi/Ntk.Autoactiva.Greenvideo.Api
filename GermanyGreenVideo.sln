@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.808.8
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GermanyGreenVideo", "GermanyGreenVideo\GermanyGreenVideo.csproj", "{94D2A391-C3F0-42E5-9E05-EAF2540E1DBD}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{20F686D5-5C50-4CDC-88E1-6055A6515B24}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ntk.Autoactiva.Greenvideo.BusinessInterface", "Ntk.Autoactiva.Greenvideo.BusinessInterface\Ntk.Autoactiva.Greenvideo.BusinessInterface.csproj", "{61DDDF2A-F7E3-40D5-8D90-B3889BC6E243}"
@@ -15,16 +13,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ntk.Autoactiva.Greenvideo.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ntk.Autoactiva.Greenvideo.BusinessPerformance", "Ntk.Autoactiva.Greenvideo.BusinessPerformance\Ntk.Autoactiva.Greenvideo.BusinessPerformance.csproj", "{8DA30F06-A24D-4BC6-8929-20BD4B6FFDF0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ntk.Autoactiva.Greenvideo.Worker", "Ntk.Autoactiva.Greenvideo.Worker\Ntk.Autoactiva.Greenvideo.Worker.csproj", "{1CAE4A3E-96EA-469C-80DF-581FB3AE5FEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ntk.Autoactiva.Greenvideo.WebApi", "Ntk.Autoactiva.Greenvideo.WebApi\Ntk.Autoactiva.Greenvideo.WebApi.csproj", "{B9F52650-8986-41C8-B4D5-3D368B8D1407}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{94D2A391-C3F0-42E5-9E05-EAF2540E1DBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{94D2A391-C3F0-42E5-9E05-EAF2540E1DBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{94D2A391-C3F0-42E5-9E05-EAF2540E1DBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{94D2A391-C3F0-42E5-9E05-EAF2540E1DBD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{61DDDF2A-F7E3-40D5-8D90-B3889BC6E243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{61DDDF2A-F7E3-40D5-8D90-B3889BC6E243}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61DDDF2A-F7E3-40D5-8D90-B3889BC6E243}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,6 +39,14 @@ Global
 		{8DA30F06-A24D-4BC6-8929-20BD4B6FFDF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DA30F06-A24D-4BC6-8929-20BD4B6FFDF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DA30F06-A24D-4BC6-8929-20BD4B6FFDF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CAE4A3E-96EA-469C-80DF-581FB3AE5FEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CAE4A3E-96EA-469C-80DF-581FB3AE5FEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CAE4A3E-96EA-469C-80DF-581FB3AE5FEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CAE4A3E-96EA-469C-80DF-581FB3AE5FEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9F52650-8986-41C8-B4D5-3D368B8D1407}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9F52650-8986-41C8-B4D5-3D368B8D1407}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9F52650-8986-41C8-B4D5-3D368B8D1407}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9F52650-8986-41C8-B4D5-3D368B8D1407}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
