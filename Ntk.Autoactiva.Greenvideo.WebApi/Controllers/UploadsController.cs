@@ -117,12 +117,12 @@ namespace Ntk.Autoactiva.Greenvideo.WebApi.Controllers
                 var Id = Guid.NewGuid().ToString();
                 var newId = Guid.NewGuid().ToString();
                 var Extension = Assistant.getHeaderValue(Request, "FileExt");
-
+                var ExtensionOut = ".webm";
                 var uploadFolderPath = Path.Combine(webRootPath, "videos");
                 Directory.CreateDirectory(uploadFolderPath);
 
                 var fullPath = Path.Combine(uploadFolderPath, Id + Extension);
-                var fullPathNew = Path.Combine(uploadFolderPath, newId + Extension);
+                var fullPathNew = Path.Combine(uploadFolderPath, newId + ExtensionOut);
 
                 string[] inputFilePaths = Directory.GetFiles(uploadTempPath);
                 if (inputFilePaths.Length != 0 && inputFilePaths.Length <=
@@ -154,7 +154,7 @@ namespace Ntk.Autoactiva.Greenvideo.WebApi.Controllers
                             var orderModel = new OrderModel()
                             {
                                 InputFileName = fileInfo.Name,
-                                OutputFileName = AssistantHelper.ChangeFileExtention(fileInfo.Name, "webm"),
+                                OutputFileName = AssistantHelper.ChangeFileExtention(fileInfo.Name, ExtensionOut),
                                 InputFileSize = fileInfo.Length
                             };
                             TextWriter tw = new StreamWriter(CoreIocConfig.IocConfig.GetCmsConfiguration().AppSettings.MicroServiceFile.ShareFolderInput + "\\" + AssistantHelper.ChangeFileExtention(fileInfo.Name, "order"), true);
@@ -185,18 +185,17 @@ namespace Ntk.Autoactiva.Greenvideo.WebApi.Controllers
 
                             if (System.IO.File.Exists(fullPathNew))
                             {
-
                                 return Ok(new Response()
                                 {
                                     IsSuccess = true,
-                                    Message = "نام فایل ارسالی در سیستم",
-                                    Data = newId + Extension
+                                    Message = "Download File Name",
+                                    Data = newId + ExtensionOut
                                 });
                             }
                             return Ok(new Response()
                             {
                                 IsSuccess = false,
-                                Message = "برروز خطا در ساخت فایل",
+                                Message = "Error On Convert File",
                                 Data = findOutFileError
                             });
                             #endregion MicroService
@@ -240,14 +239,14 @@ namespace Ntk.Autoactiva.Greenvideo.WebApi.Controllers
                                 return Ok(new Response()
                                 {
                                     IsSuccess = true,
-                                    Message = "نام فایل ارسالی در سیستم",
-                                    Data = newId + Extension
+                                    Message = "Download File Name",
+                                    Data = newId + ExtensionOut
                                 });
                             }
                             return Ok(new Response()
                             {
                                 IsSuccess = false,
-                                Message = "برروز خطا در ساخت فایل",
+                                Message = "Error On Convert File",
                                 Data = result
                             });
                             #endregion Normal

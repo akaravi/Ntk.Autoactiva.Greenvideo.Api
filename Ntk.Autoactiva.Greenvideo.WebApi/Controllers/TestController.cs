@@ -32,13 +32,17 @@ namespace Ntk.Autoactiva.Greenvideo.WebApi.Controllers
             var defaultFilePath = Path.Combine(webRootPath, "Temp", "default.mp4");
             if (!System.IO.File.Exists(defaultFilePath))
                 return BadRequest("فایل پیش فرض یافت نشد");
+
+            var Extension = ".mp4";
+            var ExtensionOut = ".webm";
+
             var Id = Guid.NewGuid().ToString();
-            var fullPath = Path.Combine(webRootPath, "Videos", Id + ".mp4");
+            var fullPath = Path.Combine(webRootPath, "Videos", Id + Extension);
             System.IO.File.Copy(defaultFilePath, fullPath);
             var newId = Guid.NewGuid().ToString();
-            var Extension = ".webm";
+
             var uploadFolderPath = Path.Combine(webRootPath, "videos");
-            var fullPathNew = Path.Combine(uploadFolderPath, newId + Extension);
+            var fullPathNew = Path.Combine(uploadFolderPath, newId + ExtensionOut);
             try
             {
                 if (CoreIocConfig.IocConfig.GetCmsConfiguration().AppSettings.MicroServiceFile.Status)
@@ -86,7 +90,7 @@ namespace Ntk.Autoactiva.Greenvideo.WebApi.Controllers
                         {
                             IsSuccess = true,
                             Message = "نام فایل ارسالی در سیستم",
-                            Data = newId + Extension
+                            Data = newId + ExtensionOut
                         });
                     }
                     return Ok(new Response()
@@ -137,7 +141,7 @@ namespace Ntk.Autoactiva.Greenvideo.WebApi.Controllers
                         {
                             IsSuccess = true,
                             Message = "نام فایل ارسالی در سیستم",
-                            Data = newId + Extension
+                            Data = newId + ExtensionOut
                         });
                     }
                     return Ok(new Response()

@@ -64,7 +64,9 @@ namespace Ntk.Autoactiva.Greenvideo.Core.Helper
         {
             if (Name.IndexOf(".") < 0)
                 return Name;
-            return Name.Substring(0, Name.IndexOf(".")) + "." + ext;
+            var retOut= Name.Substring(0, Name.IndexOf(".")) + "." + ext;
+            retOut = retOut.Replace("..", ".");
+            return retOut;
         }
         public string ExecuteCmd(string exePath, string WorkingDirectory, string command, int timeOutMin = 0)
         {
