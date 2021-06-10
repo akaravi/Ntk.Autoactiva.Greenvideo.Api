@@ -82,7 +82,10 @@ namespace Ntk.Autoactiva.Greenvideo.Worker
             }
         }
 
-      
+      private string changeFileOptimaizeName(string fileName)
+        {
+            return fileName.Insert(fileName.LastIndexOf("."), ".optimaize");
+        }
 
         private async Task CheckTheFile(OrderModel model)
         {
@@ -95,11 +98,16 @@ namespace Ntk.Autoactiva.Greenvideo.Worker
                 //string result = Assistant.Execute("C:\\ffmpeg\\bin\\ffmpeg.exe", chormaKey);
 
                 var FileName = CoreIocConfig.IocConfig.GetCmsConfiguration().AppSettings.Ffmpeg.FileName;
-                var Command = CoreIocConfig.IocConfig.GetCmsConfiguration().AppSettings.Ffmpeg.Command;
+                var CommandOptimaze = CoreIocConfig.IocConfig.GetCmsConfiguration().AppSettings.Ffmpeg.CommandOptimaze;
+                var CommandConvertWebm = CoreIocConfig.IocConfig.GetCmsConfiguration().AppSettings.Ffmpeg.CommandConvertWebm;
                 var BinPath = CoreIocConfig.IocConfig.GetCmsConfiguration().AppSettings.Ffmpeg.BinPath;
-                if (string.IsNullOrEmpty(Command))
+                if (string.IsNullOrEmpty(CommandOptimaze))
                 {
-                    _logger.LogInformation("Ffmpeg.Command  Is Null");
+                    _logger.LogInformation("Ffmpeg.CommandOptimaze  Is Null");
+                }
+                if (string.IsNullOrEmpty(CommandConvertWebm))
+                {
+                    _logger.LogInformation("Ffmpeg.CommandConvertWebm  Is Null");
                 }
                 if (string.IsNullOrEmpty(BinPath))
                 {
@@ -116,10 +124,12 @@ namespace Ntk.Autoactiva.Greenvideo.Worker
                 if (System.IO.File.Exists(model.OutputFileName + ".error"))
                     System.IO.File.Delete(model.OutputFileName + ".error");
 
-                
-                string chormaKey = string.Format(Command, CoreIocConfig.IocConfig.GetCmsConfiguration().AppSettings.MicroServiceFile.ShareFolderInProcess + "\\" + model.InputFileName, CoreIocConfig.IocConfig.GetCmsConfiguration().AppSettings.MicroServiceFile.ShareFolderInProcess+"\\"+ model.OutputFileName);
                 var ass = new AssistantHelper();
-                string result = ass.Execute(FileName, BinPath, chormaKey);
+                string cmdCommandOptimaze = string.Format(CommandOptimaze, CoreIocConfig.IocConfig.GetCmsConfiguration().AppSettings.MicroServiceFile.ShareFolderInProcess + "\\" + model.InputFileName, CoreIocConfig.IocConfig.GetCmsConfiguration().AppSettings.MicroServiceFile.ShareFolderInProcess+"\\"+ changeFileOptimaizeName(model.InputFileName));
+                string cmdCommandConvertWebm = string.Format(CommandConvertWebm, CoreIocConfig.IocConfig.GetCmsConfiguration().AppSettings.MicroServiceFile.ShareFolderInProcess + "\\" + changeFileOptimaizeName(model.InputFileName), CoreIocConfig.IocConfig.GetCmsConfiguration().AppSettings.MicroServiceFile.ShareFolderInProcess + "\\" + model.OutputFileName);
+
+                string result = ass.Execute(FileName, BinPath, cmdCommandOptimaze);
+                result = ass.Execute(FileName, BinPath, cmdCommandConvertWebm);
                 var fileOutInfo =new System.IO.FileInfo(CoreIocConfig.IocConfig.GetCmsConfiguration().AppSettings.MicroServiceFile.ShareFolderInProcess + "\\" + model.OutputFileName);
                 if (fileOutInfo.Exists)
                 {

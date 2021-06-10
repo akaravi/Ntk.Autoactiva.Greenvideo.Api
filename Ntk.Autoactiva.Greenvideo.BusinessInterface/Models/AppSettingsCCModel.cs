@@ -21,7 +21,8 @@
     {
         public string FileName { get; set; } = "";
         public string BinPath { get; set; } = "";
-        public string Command { get; set; } = "";
+        public string CommandOptimaze { get; set; } = "";
+        public string CommandConvertWebm { get; set; } = "";
     }
     public class MicroServicCModel
     {

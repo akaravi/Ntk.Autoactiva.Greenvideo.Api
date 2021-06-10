@@ -106,14 +106,23 @@ namespace Ntk.Autoactiva.Greenvideo.WebApi.Controllers
                     #region Normal
 
                     var FileName = CoreIocConfig.IocConfig.GetCmsConfiguration().AppSettings.Ffmpeg.FileName;
-                    var Command = CoreIocConfig.IocConfig.GetCmsConfiguration().AppSettings.Ffmpeg.Command;
+                    var CommandOptimaze = CoreIocConfig.IocConfig.GetCmsConfiguration().AppSettings.Ffmpeg.CommandOptimaze;
+                    var CommandConvertWebm = CoreIocConfig.IocConfig.GetCmsConfiguration().AppSettings.Ffmpeg.CommandConvertWebm;
                     var BinPath = CoreIocConfig.IocConfig.GetCmsConfiguration().AppSettings.Ffmpeg.BinPath;
-                    if (string.IsNullOrEmpty(Command))
+                    if (string.IsNullOrEmpty(CommandOptimaze))
                     {
                         return Ok(new Response()
                         {
                             IsSuccess = false,
-                            Message = "Ffmpeg.Command  Is Null"
+                            Message = "Ffmpeg.CommandOptimaze  Is Null"
+                        });
+                    }
+                    if (string.IsNullOrEmpty(CommandConvertWebm))
+                    {
+                        return Ok(new Response()
+                        {
+                            IsSuccess = false,
+                            Message = "Ffmpeg.CommandConvertWebm  Is Null"
                         });
                     }
                     if (string.IsNullOrEmpty(BinPath))
@@ -132,9 +141,12 @@ namespace Ntk.Autoactiva.Greenvideo.WebApi.Controllers
                             Message = "Ffmpeg.FileName  Is Null"
                         });
                     }
-                    string chormaKey = string.Format(Command, fullPath, fullPathNew);
                     var ass = new AssistantHelper();
-                    string result = ass.Execute(FileName, BinPath, chormaKey);
+                    //string CmdommandOptimaze = string.Format(CommandOptimaze, fullPath, fullPath);
+                    //string result = ass.Execute(FileName, BinPath, CmdommandOptimaze);
+
+                    string CmdCommandConvertWebm = string.Format(CommandConvertWebm, fullPath, fullPathNew);
+                    string result = ass.Execute(FileName, BinPath, CmdCommandConvertWebm);
                     if (System.IO.File.Exists(fullPathNew))
                     {
                         return Ok(new Response()
